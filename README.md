@@ -1,16 +1,32 @@
-## Hi there 👋
+```markdown
+<table>
+  <tr>
+    <td>
+      <img src="/pfp.png" alt="4witty" width="200">
+    </td>
+    <td>
+      <pre>
+4witty@github
+ೋ❀❀ೋ═══ ❀ ═══ೋ❀❀ೋ
 
-<!--
-**4witty/4witty** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+<strong>research developer</strong>
 
-Here are some ideas to get you started:
+<span style="color: #50fa7b">➜</span> <span style="color: #bd93f9">~</span> whoami
+4witty
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+<span style="color: #50fa7b">➜</span> <span style="color: #bd93f9">~</span> cat skills.txt
+python • javascript • lua • bash
+
+<span style="color: #50fa7b">➜</span> <span style="color: #bd93f9">~</span> ./current_project.sh
+building...
+
+<span style="color: #50fa7b">➜</span> <span style="color: #bd93f9">~</span> _
+      </pre>
+    </td>
+  </tr>
+</table>
+
+---
+
+[![github stats](https://github-readme-stats.vercel.app/api?username=4witty&show_icons=true&theme=dark)](https://github.com/4witty)
+```
