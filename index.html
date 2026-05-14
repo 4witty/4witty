@@ -10,35 +10,129 @@
 </head>
 <body>
     <div id="loading-screen">
-        <div class="loader"></div>
-        <p>loading...</p>
+        <div class="loader-circle"></div>
+        <p class="loading-text">loading...</p>
     </div>
+
     <div id="video-background">
-        <video autoplay muted loop id="myVideo">
+        <video autoplay muted loop playsinline id="myVideo">
             <source src="assets/back/videopc.mp4" type="video/mp4">
         </video>
     </div>
+
     <audio id="myAudio" loop>
         <source src="assets/music/crashout.mp3" type="audio/mpeg">
     </audio>
-    <div id="blurred-box">
-        <img id="profile-picture" src="assets/pfp/pfp.png" alt="avatar">
-        <img id="avatar-frame" src="" alt="frame">
-        <div class="user-description">
-            <p>4witty</p>
-            <p class="subtitle">lazy research dev</p>
+
+    <section id="info-section" class="content-section active">
+        <div class="card-container">
+            <div class="card">
+                <img id="profile-picture" src="assets/pfp/pfp.png" alt="avatar">
+                <img id="avatar-frame" src="" alt="frame">
+                <div class="user-description">
+                    <p class="username">4witty</p>
+                    <p class="subtitle">lazy research dev</p>
+                    <div class="bio-extra">
+                        <p>16 yo</p>
+                        <p>not for hire</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="links">
-            <a href="https://xbox.com/wittylunarqq" target="_blank"><i class="fab fa-xbox"></i></a>
-            <a href="https://vk.com/wittylunar" target="_blank"><i class="fab fa-vk"></i></a>
-            <a href="https://www.roblox.com/users/5370746209/profile" target="_blank"><i class="fas fa-gamepad"></i></a>
-            <a href="https://github.com/4witty" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://on.soundcloud.com/TpX20DjO7cJMGcO1WK" target="_blank"><i class="fab fa-soundcloud"></i></a>
-            <a href="https://discord.gg/6tDJdW56A9" target="_blank"><i class="fab fa-discord"></i></a>
+    </section>
+
+    <section id="skills-section" class="content-section">
+        <div class="card-container">
+            <div class="card">
+                <h2 class="section-title"><i class="fas fa-pencil-alt"></i> skills</h2>
+                <div class="skills-container">
+                    <div class="skill-item">
+                        <i class="fab fa-python"></i>                        <span>python</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-js"></i>
+                        <span>javascript</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-code"></i>
+                        <span>lua</span>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
+
+    <section id="links-section" class="content-section">
+        <div class="card-container">
+            <div class="card">
+                <h2 class="section-title"><i class="fas fa-link"></i> links</h2>
+                <div class="links-grid">
+                    <a href="https://xbox.com/wittylunarqq" target="_blank" rel="noopener noreferrer" class="link-card">
+                        <i class="fab fa-xbox"></i>
+                        <span>xbox</span>
+                    </a>
+                    <a href="https://vk.com/wittylunar" target="_blank" rel="noopener noreferrer" class="link-card">
+                        <i class="fab fa-vk"></i>
+                        <span>vk</span>
+                    </a>
+                    <a href="https://github.com/4witty" target="_blank" rel="noopener noreferrer" class="link-card">
+                        <i class="fab fa-github"></i>
+                        <span>github</span>
+                    </a>
+                    <a href="https://on.soundcloud.com/TpX20DjO7cJMGcO1WK" target="_blank" rel="noopener noreferrer" class="link-card">
+                        <i class="fab fa-soundcloud"></i>
+                        <span>soundcloud</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="music-section" class="content-section">
+        <div class="card-container">
+            <div class="card">
+                <h2 class="section-title"><i class="fas fa-music"></i> music player</h2>
+                <div class="music-player">
+                    <div class="album-art">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <div class="track-info">                        <p class="track-name">crashout.mp3</p>
+                        <p class="track-artist">background music</p>
+                    </div>
+                    <button id="play-pause-btn" class="play-pause-btn">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <div class="volume-control">
+                        <i class="fas fa-volume-up"></i>
+                        <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.1">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <nav class="bottom-nav">
+        <button class="nav-item active" data-section="info-section">
+            <i class="fas fa-home"></i>
+            <span>info</span>
+        </button>
+        <button class="nav-item" data-section="skills-section">
+            <i class="fas fa-pencil-alt"></i>
+            <span>skills</span>
+        </button>
+        <button class="nav-item" data-section="links-section">
+            <i class="fas fa-link"></i>
+            <span>links</span>
+        </button>
+        <button class="nav-item" data-section="music-section">
+            <i class="fas fa-music"></i>
+            <span>music</span>
+        </button>
+    </nav>
+
     <script src="assets/js/title.js"></script>
     <script src="assets/js/discord.js"></script>
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/navigation.js"></script>
 </body>
 </html>
