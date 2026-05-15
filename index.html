@@ -8,24 +8,36 @@
     <link rel="icon" href="assets/favico/icon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
+<body class="theme-black-rice">
     <div id="loading-screen">
         <div class="loader-circle"></div>
         <p class="loading-text">loading...</p>
     </div>
 
-    <div id="video-background">
-        <video autoplay muted loop playsinline id="myVideo">
-            <source src="assets/back/videopc.mp4" type="video/mp4">
-        </video>
-    </div>
+    <div id="background-container"></div>
 
     <audio id="myAudio" loop>
         <source src="assets/music/crashout.mp3" type="audio/mpeg">
     </audio>
 
-    <div class="theme-toggle" id="theme-toggle">
-        <i class="fas fa-moon"></i>
+    <div class="settings-panel" id="settings-panel">
+        <button class="settings-btn" id="settings-btn">
+            <i class="fas fa-cog"></i>
+        </button>
+        <div class="theme-menu" id="theme-menu">
+            <button class="theme-option" data-theme="black-rice">
+                <span class="theme-dot black-rice-dot"></span>
+                Black Rice
+            </button>
+            <button class="theme-option" data-theme="akame">
+                <span class="theme-dot akame-dot"></span>
+                Akame
+            </button>
+            <button class="theme-option" data-theme="white-sunshine">
+                <span class="theme-dot white-dot"></span>
+                Sunshine
+            </button>
+        </div>
     </div>
 
     <section id="info-section" class="content-section active">
@@ -182,5 +194,6 @@
     <script src="assets/js/discord.js"></script>
     <script src="assets/js/script.js"></script>
     <script src="assets/js/navigation.js"></script>
+    <script src="assets/js/themes.js"></script>
 </body>
 </html>
