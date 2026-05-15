@@ -8,6 +8,7 @@ body {
     font-family: 'Courier New', Courier, monospace;
     overflow: hidden;
     height: 100vh;
+    width: 100vw;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -214,6 +215,8 @@ body.theme-white-sunshine .play-pause-btn {
     justify-content: center;
     align-items: center;
     z-index: 100;
+    overflow-y: auto;
+    padding-bottom: 100px;
 }
 
 .content-section.active {
@@ -238,7 +241,7 @@ body.theme-white-sunshine .play-pause-btn {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100%;
+    min-height: 100%;
     padding: 20px;
 }
 
@@ -687,6 +690,7 @@ body.theme-white-sunshine .play-pause-btn {
     gap: 8px;
     font-size: 12px;
     font-family: 'Courier New', Courier, monospace;
+    white-space: nowrap;
 }
 
 .theme-option:hover,
@@ -700,6 +704,7 @@ body.theme-white-sunshine .play-pause-btn {
     height: 12px;
     border-radius: 50%;
     display: inline-block;
+    flex-shrink: 0;
 }
 
 .black-rice-dot {
@@ -785,6 +790,11 @@ body.theme-white-sunshine .play-pause-btn {
         padding: 25px 20px;
         max-width: 90%;
     }
+    
+    .card-container {
+        padding: 15px;
+    }
+    
     #profile-picture {
         width: 90px;
         height: 90px;
@@ -808,9 +818,11 @@ body.theme-white-sunshine .play-pause-btn {
     }
 
     .bottom-nav {
-        bottom: 15px;
+        bottom: 12px;
         padding: 8px 10px;
-        gap: 4px;
+        gap: 3px;
+        width: calc(100% - 24px);
+        max-width: calc(100% - 24px);
     }
 
     .nav-item {
@@ -831,18 +843,26 @@ body.theme-white-sunshine .play-pause-btn {
         width: 45px;
         height: 45px;
         font-size: 18px;
+        top: 15px;
+        right: 15px;
     }
 
     .theme-menu {
         top: 60px;
+        right: -5px;
+    }
+
+    .theme-option {
+        padding: 8px 12px;
+        font-size: 11px;
     }
 
     .skill-item {
         padding: 12px;
     }
 
-    .card-container {
-        padding: 15px;
+    .content-section {
+        padding-bottom: 90px;
     }
 }
 
@@ -852,10 +872,15 @@ body.theme-white-sunshine .play-pause-btn {
         max-width: 95%;
     }
 
+    .card-container {
+        padding: 10px;
+    }
+
     #profile-picture {
         width: 80px;
         height: 80px;
     }
+    
     .album-art {
         width: 100px;
         height: 100px;
@@ -884,12 +909,13 @@ body.theme-white-sunshine .play-pause-btn {
 
     .theme-menu {
         top: 50px;
-        right: -10px;
+        right: -15px;
+        padding: 6px;
     }
 
     .theme-option {
-        padding: 8px 12px;
-        font-size: 11px;
+        padding: 8px 10px;
+        font-size: 10px;
     }
 
     .section-title {
@@ -901,13 +927,34 @@ body.theme-white-sunshine .play-pause-btn {
         font-size: 20px;
     }
 
-    .card-container {
-        padding: 10px;
-    }
-
     .bottom-nav {
         bottom: 10px;
-        padding: 8px 8px;
+        padding: 8px 6px;
         gap: 2px;
+        width: calc(100% - 12px);
+        max-width: calc(100% - 12px);
+        left: 6px;
+        transform: none;
+    }
+
+    .nav-item {
+        padding: 8px 10px;
+        min-width: 45px;
+    }
+
+    .nav-item i {
+        font-size: 16px;
+    }
+
+    .content-section {
+        padding-bottom: 80px;
+    }
+
+    .skill-bar {
+        height: 3px;
+    }
+
+    .skills-container {
+        gap: 12px;
     }
 }
