@@ -22,6 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     })
     .catch(error => {
-        console.error("Error fetching user  ", error);
+        console.error("Error fetching user", error);
     });
 });

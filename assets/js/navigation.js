@@ -4,9 +4,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const audio = document.getElementById('myAudio');
     const playPauseBtn = document.getElementById('play-pause-btn');
     const volumeSlider = document.getElementById('volume-slider');
+    const themeToggle = document.getElementById('theme-toggle');
     let isPlaying = false;
+    let isDarkMode = true;
 
-    navItems.forEach(item => {
+    navItems.forEach((item, index) => {
         item.addEventListener('click', () => {
             navItems.forEach(nav => nav.classList.remove('active'));
             sections.forEach(section => section.classList.remove('active'));
@@ -45,5 +47,21 @@ document.addEventListener('DOMContentLoaded', () => {
         
         audio.volume = 0.1;
         volumeSlider.value = 0.1;
+    }
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            isDarkMode = !isDarkMode;
+            const icon = themeToggle.querySelector('i');
+            document.body.classList.toggle('light-mode');
+            
+            if (isDarkMode) {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            } else {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            }
+        });
     }
 });

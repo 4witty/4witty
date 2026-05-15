@@ -1,17 +1,18 @@
 document.addEventListener('DOMContentLoaded', function() {
     var videoBackground = document.getElementById('myVideo');
     var audioBackground = document.getElementById('myAudio');
-    var blurredBox = document.getElementById('blurred-box');
     var loadingScreen = document.getElementById('loading-screen');
+    var profilePicture = document.getElementById('profile-picture');
     
     videoBackground.pause();
     audioBackground.pause();
+    
+    profilePicture.style.animation = 'float 3s ease-in-out infinite';
     
     setTimeout(function() {
         loadingScreen.classList.add('hidden');
         videoBackground.play();
         audioBackground.play();
-        blurredBox.style.display = 'block';
     }, 2000);
     
     var audio = document.getElementById("myAudio");

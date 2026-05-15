@@ -24,6 +24,10 @@
         <source src="assets/music/crashout.mp3" type="audio/mpeg">
     </audio>
 
+    <div class="theme-toggle" id="theme-toggle">
+        <i class="fas fa-moon"></i>
+    </div>
+
     <section id="info-section" class="content-section active">
         <div class="card-container">
             <div class="card">
@@ -32,6 +36,7 @@
                 <div class="user-description">
                     <p class="username">4witty</p>
                     <p class="subtitle">lazy research dev</p>
+                    <div class="status-badge">researching</div>
                     <div class="bio-extra">
                         <p>16 yo</p>
                         <p>not for hire</p>
@@ -47,15 +52,53 @@
                 <h2 class="section-title"><i class="fas fa-pencil-alt"></i> skills</h2>
                 <div class="skills-container">
                     <div class="skill-item">
-                        <i class="fab fa-python"></i>                        <span>python</span>
+                        <i class="fab fa-python"></i>
+                        <div class="skill-info">
+                            <span class="skill-name">python</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
                     </div>
                     <div class="skill-item">
                         <i class="fab fa-js"></i>
-                        <span>javascript</span>
+                        <div class="skill-info">
+                            <span class="skill-name">javascript</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
                     </div>
                     <div class="skill-item">
                         <i class="fas fa-code"></i>
-                        <span>lua</span>
+                        <div class="skill-info">
+                            <span class="skill-name">lua</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects-section" class="content-section">
+        <div class="card-container">
+            <div class="card">
+                <h2 class="section-title"><i class="fas fa-folder"></i> projects</h2>
+                <div class="projects-container">
+                    <div class="project-item">
+                        <div class="project-icon"><i class="fas fa-cube"></i></div>
+                        <span class="project-name">coming soon</span>
+                    </div>
+                    <div class="project-item">
+                        <div class="project-icon"><i class="fas fa-cube"></i></div>
+                        <span class="project-name">coming soon</span>
+                    </div>
+                    <div class="project-item">
+                        <div class="project-icon"><i class="fas fa-cube"></i></div>
+                        <span class="project-name">coming soon</span>
                     </div>
                 </div>
             </div>
@@ -96,7 +139,8 @@
                     <div class="album-art">
                         <i class="fas fa-music"></i>
                     </div>
-                    <div class="track-info">                        <p class="track-name">crashout.mp3</p>
+                    <div class="track-info">
+                        <p class="track-name">crashout.mp3</p>
                         <p class="track-artist">background music</p>
                     </div>
                     <button id="play-pause-btn" class="play-pause-btn">
@@ -119,6 +163,10 @@
         <button class="nav-item" data-section="skills-section">
             <i class="fas fa-pencil-alt"></i>
             <span>skills</span>
+        </button>
+        <button class="nav-item" data-section="projects-section">
+            <i class="fas fa-folder"></i>
+            <span>projects</span>
         </button>
         <button class="nav-item" data-section="links-section">
             <i class="fas fa-link"></i>
