@@ -6,13 +6,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const volumeSlider = document.getElementById('volume-slider');
     let isPlaying = false;
 
-    const savedSection = localStorage.getItem('lastSection') || 'info-section';
+    const cacheKey = 'siteCache';
+    let cache = JSON.parse(sessionStorage.getItem(cacheKey)) || JSON.parse(localStorage.getItem('siteLastCache')) || {};
+    
+    const savedSection = cache.lastSection || localStorage.getItem('lastSection') || 'info-section';
     navigateToSection(savedSection);
 
     navItems.forEach((item) => {
         item.addEventListener('click', () => {
             const sectionId = item.dataset.section;
+            
+            cache.lastSection = sectionId;
+            sessionStorage.setItem(cacheKey, JSON.stringify(cache));
+            localStorage.setItem('siteLastCache', JSON.stringify(cache));
             localStorage.setItem('lastSection', sectionId);
+            
             navigateToSection(sectionId);
         });
     });
