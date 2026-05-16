@@ -11,23 +11,14 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(function() {
             loadingScreen.classList.add('hidden');
             if (audioBackground) {
-                audioBackground.play().catch(e => console.log('Audio auto-play blocked'));
+                audioBackground.play().catch(e => null);
             }
         }, 1500);
     }
     
-    const audio = document.getElementById("myAudio");
+    const audio = document.getElementById('myAudio');
     if (audio) {
         const maxVolume = 0.1;
-        
-        function limitVolume(volume) {
-            if (volume > maxVolume) {
-                audio.volume = maxVolume;
-            } else {
-                audio.volume = volume;
-            }
-        }
-        
-        limitVolume(0.1);
+        audio.volume = maxVolume;
     }
 });

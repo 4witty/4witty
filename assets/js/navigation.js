@@ -6,18 +6,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const volumeSlider = document.getElementById('volume-slider');
     let isPlaying = false;
 
-    navItems.forEach((item, index) => {
-        item.addEventListener('click', () => {
-            navItems.forEach(nav => nav.classList.remove('active'));
-            sections.forEach(section => section.classList.remove('active'));
+    const savedSection = localStorage.getItem('lastSection') || 'info-section';
+    navigateToSection(savedSection);
 
-            item.classList.add('active');
-            const targetSection = document.getElementById(item.dataset.section);
-            if (targetSection) {
-                targetSection.classList.add('active');
-            }
+    navItems.forEach((item) => {
+        item.addEventListener('click', () => {
+            const sectionId = item.dataset.section;
+            localStorage.setItem('lastSection', sectionId);
+            navigateToSection(sectionId);
         });
     });
+
+    function navigateToSection(sectionId) {
+        navItems.forEach(nav => nav.classList.remove('active'));
+        sections.forEach(section => section.classList.remove('active'));
+
+        const activeNav = document.querySelector(`[data-section="${sectionId}"]`);
+        const activeSection = document.getElementById(sectionId);
+        
+        if (activeNav) activeNav.classList.add('active');
+        if (activeSection) activeSection.classList.add('active');
+    }
 
     if (playPauseBtn && audio) {
         playPauseBtn.addEventListener('click', () => {
@@ -29,12 +38,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 icon.classList.add('fa-play');
                 isPlaying = false;
             } else {
-                audio.volume = 0.1;
-                audio.play().catch(err => console.log('playback failed:', err));
+                audio.volume = volumeSlider ? parseFloat(volumeSlider.value) : 0.1;
+                audio.play().catch(() => null);
                 icon.classList.remove('fa-play');
                 icon.classList.add('fa-pause');
                 isPlaying = true;
             }
+        });
+
+        audio.addEventListener('play', () => {
+            isPlaying = true;
+        });
+        audio.addEventListener('pause', () => {
+            isPlaying = false;
         });
     }
 

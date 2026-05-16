@@ -39,7 +39,8 @@ function initThemes() {
     });
     
     themeOptions.forEach(option => {
-        option.addEventListener('click', () => {
+        option.addEventListener('click', (e) => {
+            e.preventDefault();
             const theme = option.dataset.theme;
             if (theme) {
                 setTheme(theme);
